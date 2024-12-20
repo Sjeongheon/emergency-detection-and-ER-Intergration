@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Recommended Hospitals</title>
+    <link rel="stylesheet"  type="text/css" href="/recommend_hospital_style.css">
 </head>
 <body>
 <h1>Recommended Hospitals</h1>
@@ -21,7 +22,6 @@
     </tr>
     </thead>
     <tbody>
-    <!-- 병원 목록 반복 -->
     <tr th:each="hospital, iterStat : ${hospitalList}">
         <td th:text="${iterStat.index + 1}"></td>
         <td th:text="${hospital.hospitalName}"></td>
