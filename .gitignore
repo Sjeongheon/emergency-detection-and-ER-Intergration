@@ -1,0 +1,5 @@
+.gradle/
+.vscode/
+HELP.md
+build/
+fine_tuned_bert/model.safetensors
