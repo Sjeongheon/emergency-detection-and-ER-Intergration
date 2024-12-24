@@ -3,3 +3,5 @@
 HELP.md
 build/
 fine_tuned_bert/model.safetensors
+api_key.txt
+map_key.txt

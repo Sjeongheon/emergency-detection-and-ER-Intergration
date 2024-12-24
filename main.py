@@ -12,6 +12,21 @@ app = FastAPI(
     version = "1.0.0"
     )
 
+import json
+
+openai.api_key = em.load_file('api_key.txt')
+os.environ['OPENAI_API_KEY'] = openai.api_key
+
+map_key = em.load_file('map_key.txt')
+map_key = json.loads(map_key)
+c_id, c_key = map_key['c_id'], map_key['c_key']
+os.environ['MAP_ID'] = c_id
+os.environ['MAP_KEY'] = c_key
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 
 @app.get("/hospital_by_module")
 async def get_hospital(request: str, latitude: float, longitude: float):
